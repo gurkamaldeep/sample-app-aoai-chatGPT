@@ -95,13 +95,13 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
     name: 'authsettingsV2'
     properties: {
       globalValidation: {
-        requireAuthentication: true
+        requireAuthentication: false
         unauthenticatedClientAction: 'RedirectToLoginPage'
         redirectToProvider: 'azureactivedirectory'
       }
       identityProviders: {
         azureActiveDirectory: {
-          enabled: true
+          enabled: false
           registration: {
             clientId: authClientId
             clientSecretSettingName: 'AUTH_CLIENT_SECRET'
@@ -116,7 +116,7 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
       }
       login: {
         tokenStore: {
-          enabled: true
+          enabled: false
         }
       }
     }
