@@ -32,7 +32,7 @@ const Chat = () => {
     const abortFuncs = useRef([] as AbortController[]);
     const [showAuthMessage, setShowAuthMessage] = useState<boolean>(true);
     
-    const getUserInfoList = async () => {
+ /**    const getUserInfoList = async () => {
         const userInfoList = await getUserInfo();
         if (userInfoList.length === 0 && window.location.hostname !== "127.0.0.1") {
             setShowAuthMessage(false);
@@ -41,7 +41,7 @@ const Chat = () => {
             setShowAuthMessage(false);
         }
     }
-
+*/
     const makeApiRequest = async (question: string) => {
         lastQuestionRef.current = question;
 
@@ -123,11 +123,11 @@ const Chat = () => {
         setShowLoadingMessage(false);
         setIsLoading(false);
     }
-
+/**
     useEffect(() => {
         getUserInfoList();
     }, []);
-
+    */
     useEffect(() => chatMessageStreamEnd.current?.scrollIntoView({ behavior: "smooth" }), [showLoadingMessage]);
 
     const onShowCitation = (citation: Citation) => {
